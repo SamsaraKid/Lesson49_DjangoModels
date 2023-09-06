@@ -18,7 +18,13 @@
 <table>
     <tr><th>ID</th><th>NAME</th><th>AGE</th></tr>
     {% for one in database %}
-        <tr><td>{{ one.id }}</td><td>{{ one.name }}</td><td>{{ one.age }}</td><td><a href="{% url 'del' one.id %}">del</a></td></tr>
+        <tr>
+            <td>{{ one.id }}</td>
+            <td>{{ one.name }}</td>
+            <td>{{ one.age }}</td>
+            <td><a href="{% url 'edit' one.id %}">изменить</a></td>
+            <td><a href="{% url 'del' one.id %}">удалить</a></td>
+        </tr>
     {% endfor %}
 </table>
 
